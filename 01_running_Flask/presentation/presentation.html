@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+
+                <!-- THEME now expected in head.html.
+                     <link rel="stylesheet" href="css/theme/default.css" id="theme">
+                  -->
+
+                <!-- Meta-content (title, meta, style). -->
+                <title>Web Services: Flask</title><meta content="Web Services: Flask" name="description" /><meta content="Nick Rothwell" name="author" /><link href="css/theme/sky.css" rel="stylesheet" type="text/css" />
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+                <!-- Pull in main content. -->
+                <div class="reveal"><div class="slides"><section><h3>Web Services: Flask</h3><h4>Nick Rothwell</h4></section><section><section><h3>Features</h3><h4>Front-End</h4><ul><li>Browser-based</li><li>Run locally</li><li>Individual (session)</li><li>Connected to server (only)</li><li>Temporary Local State</li></ul></section><section><h4>Back-End</h4><ul><li>Centralised server (farm)</li><li>Global state, storage</li><li>Networked, sharing</li><li>Permanent storage</li><li>Big data</li></ul></section></section><section><section><h3>Technologies</h3><h4>Front-End</h4><ul><li>Browser</li><li>HTML, CSS, SVG (DOM)</li><li>Javascript</li><li>WebGL, Web Audio, ...</li></ul></section><section><h4>Back-End</h4><ul><li>Content (templates, media, ...)</li><li>Databases</li><li>Content management (WordPress, ...)</li><li>Caches, data feeds, messaging, ...</li><li>Wide variety of servers (Apache, Nginx, PHP, Tomcat, IIS, ...)</li><li>Wide variety of languages (Java, Ruby, PHP, Python, Clojure, ...)</li></ul></section></section><section><section><h3>Languages</h3><h4>Back End</h4><ul><li>Java</li><li>Ruby</li><li>Python</li><li>Clojure</li><li>C/C++</li><li>Perl</li><li>PHP</li><li>SQL, XML, ...</li></ul></section><section><h4>Front End</h4><ul><li>HTML/CSS</li><li>Javascript</li><li class="fragment">(+ Frameworks: React/JSX, jQuery, D3.js, ...)</li><li class="fragment">(+ CoffeeScript, ClojureScript, ...)</li></ul></section></section><section><section><h3>Flask (Revisited)</h3><ul><li>Standalone server</li><li>Requests served by Python <strong>handlers</strong> (<i>Werkzeug</i>)</li><li>Templating engine (<i>Jinja2</i>)</li></ul></section><section><pre><code class="html">from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/index/&lt;name&gt;')
+def index(name="default"):
+    return render_template('index.html', title=name)
+
+app.run(host='0.0.0.0', port=8080, debug=True)</code></pre></section></section><section><section><h3>Python: Installing <i>virtualenv</i></h3><ul><li><span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">virtualenv</span>: create a sandboxed Python environment</li><li>Multiple Python systems - perhaps even different Python versions</li><li>Install packages as non-privileged user</li><li>Switch between environments</li></ul></section><section><h3>Python Installer Yak-Shaving</h3><h4>(setuptools vs. pip)</h4><ul><li>Need to install <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">virtualenv</span>, using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip</span></li><li>Need to install <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip</span> using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">easy_install</span></li><li>(Windows:) Need to install <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">easy_install</span></li></ul></section><section><h4>OS X, Linux</h4><ul><li>OS X: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">easy_install</span> should be present</li><li>Linux (Ubuntu/Debian): might need <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">sudo apt-get install setuptools</span></li><li>If you don't have <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip</span> then: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">sudo easy_install pip</span></li><li>If you don't have <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">virtualenv</span>then: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">sudo pip install virtualenv</span></li></ul></section><section><h4>Windows</h4><ul><li>Get <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">setuptools</span> here: <a href="https://pypi.python.org/pypi/setuptools"><code>https://pypi.python.org/pypi/setuptools</code></a></li><li>Sort out your path environment (see next)</li><li><span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">easy_install pip</span></li><li><span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip install virtualenv</span></li></ul><p>(Or: take a chance on Python 3...)</p></section><section><img height="480" src="images/win-path.png" style="margin:10px; vertical-align:middle" /></section></section><section><section><h3>Using <i>virtualenv</i></h3><ul><li>Create a new virtual environment (once!) with: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">virtualenv venv</span></li><li>Activate (each session) with <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">source venv/bin/activate</span> (OS X/Linux) or <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">venv\Scripts\activate</span> (Windows)</li><li>(The command prompt will change)</li><li>Do stuff, including <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip</span> - no <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">sudo</span> needed</li><li>Deactivate with <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">deactivate</span></li></ul></section></section><section><section><h3>Installing Flask</h3><ul><li>Create and activate a virtual environment</li><li><span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">pip install Flask</span></li></ul></section><section><h4>Simple Flask 'Hello World'</h4><pre><code class="html">from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+if __name__ == '__main__':
+    app.run()</code></pre></section></section></div></div>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
