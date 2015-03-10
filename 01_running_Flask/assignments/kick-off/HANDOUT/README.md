@@ -22,7 +22,7 @@ Here is a simple, stand-alone Flask program which presents a basic `Hello World`
    
    - Do you have `easy_install`? If not, you'll need to install *that* using `setuptools`.
    
-On Windows, you may well have some of these programs installed, but not in your search path; check `C:\PythonXX` and `C:\PythonXX\Scripts` first. Modify your path if necessary.
+   On Windows, you may well have some of these programs installed, but not in your search path; check `C:\PythonXX` and `C:\PythonXX\Scripts` first. Modify your path if necessary.
 
 1. Create a virtual environment. I tend to use a name like `venv`, but the name should really reflect the purpose of the environment, like `basic_flask_env`.
 
