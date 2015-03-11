@@ -1,3 +1,5 @@
+`-*- mode: markdown; mode: visual-line; mode: adaptive-wrap-prefix; -*-`
+
 # SIMPLE TEMPLATE
 
 Simple template expansion.

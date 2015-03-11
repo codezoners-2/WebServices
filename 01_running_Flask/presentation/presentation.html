@@ -66,7 +66,7 @@ app = Flask(__name__)
 def index(name="default"):
     return render_template('index.html', title=name)
 
-app.run(host='0.0.0.0', port=8080, debug=True)</code></pre><ul><li>Use the form <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">&lt;name&gt;</span> to bind part of the URL</li><li>Use <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">render_template</span> to render a template (with keyword arguments)</li></ul></section><section><pre><code class="html">&lt;HTML&gt;
+app.run(host='0.0.0.0', port=8080, debug=True)</code></pre><ul><li>Use the form <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">&lt;name&gt;</span> to bind part of the URL</li><li>The handler (<span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">index</span>) takes an argument with a default value</li><li>Use <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">render_template</span> to render a template (with keyword arguments)</li></ul></section><section><pre><code class="html">&lt;HTML&gt;
   &lt;HEAD&gt;
     &lt;TITLE&gt;{{ title }}&lt;/TITLE&gt;
   &lt;/HEAD&gt;
@@ -75,7 +75,17 @@ app.run(host='0.0.0.0', port=8080, debug=True)</code></pre><ul><li>Use the form 
     &lt;H1&gt;{{ title }}&lt;/H1&gt;
 
   &lt;/BODY&gt;
-&lt;/HTML&gt;</code></pre></section></section></div></div>
+&lt;/HTML&gt;</code></pre><p>(<a href="https://github.com/codezoners-2/WebServices/tree/master/01_running_Flask/assignments/simple-template/HANDOUT">GitHub link</a>.)</p></section></section><section><section><h3>Shakespeare Revisited</h3><img height="480" src="images/plays-1.png" style="margin:10px; vertical-align:middle" /></section><section><ul><li>Search term picked up from the URL</li><li>Template generates title and list of results</li><li>Formatting here is simple (<span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">&lt;UL&gt;</span>, <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">&lt;LI&gt;</span>...)</li><li><i>No change</i> to the core logic (<span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">logic.py</span>)</li></ul></section><section><h4>Directory Layout</h4><pre><code class="html">.
+└── flask
+    ├── data
+    ...
+    │   ├── alls well that ends well
+    │   ├── as you like it
+    ... etc ...
+    ├── logic.py
+    ├── run.py
+    └── templates
+        └── results.html</code></pre><p>Core logic: <a href="https://github.com/codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare/HANDOUT/flask/logic.py">GitHub link</a></p></section></section></div></div>
 
 		<script>
 

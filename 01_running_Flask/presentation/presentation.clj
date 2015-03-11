@@ -221,7 +221,42 @@
                     ".)"]
 
                    ]
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Shakespeare Revisited")
+                   (image "plays-1.png")]
+
+                  [:section
+                   [:ul
+                    [:li "Search term picked up from the URL"]
+                    [:li "Template generates title and list of results"]
+                    [:li "Formatting here is simple (" (tt "<UL>") ", " (tt "<LI>") "...)"]
+                    [:li [:i "No change"] " to the core logic (" (tt "logic.py") ")"]
+                    ]]
+
+                  [:section
+                   (subheading "Directory Layout")
+
+                   (include-code "play-1-tree.txt")
+
+                   [:p "Core logic: "
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare/HANDOUT/flask/logic.py"
+                            "GitHub link")]
+
+                   ]
 
                   ]
 
-                 ])
+                 [:section
+                  [:section
+                   (heading "Exercise 1")
+                   (subheading "Shakespeare Revisited")
+
+                   [:p "Implement the Shakespeare server."]
+
+                   [:p "(Details "
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare/HANDOUT/README.md"
+                            "here") ".)"]
+                                      ]]])
