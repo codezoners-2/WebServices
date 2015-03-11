@@ -56,7 +56,26 @@ def hello_world():
     return 'Hello World!'
 
 if __name__ == '__main__':
-    app.run()</code></pre></section></section></div></div>
+    app.run()</code></pre></section></section><section><section><h3>Exercise 0</h3><h4>Running Flask</h4><p>Start up a Flask server in a virtual environment, serving a 'Hello World' page.</p><p>Bonus: can you switch between Python 2 and Python 3? How could you show the version in the browser?</p><p>(<a href="https://github.com/codezoners-2/WebServices/tree/master/01_running_Flask/assignments/kick-off/HANDOUT">GitHub link</a>.)</p></section></section><section><section><h3>Jinja2 Templating</h3><p>Flask supports dynamic web page rendering</p><ul><li>Pulling substrings from URLs</li><li>Rendering templates</li></ul></section><section><h4>Handler for templates</h4><pre><code class="html">from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/index')
+@app.route('/index/&lt;name&gt;')
+def index(name="default"):
+    return render_template('index.html', title=name)
+
+app.run(host='0.0.0.0', port=8080, debug=True)</code></pre><ul><li>Use the form <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">&lt;name&gt;</span> to bind part of the URL</li><li>Use <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">render_template</span> to render a template (with keyword arguments)</li></ul></section><section><pre><code class="html">&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;{{ title }}&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;BODY&gt;
+    &lt;H1&gt;{{ title }}&lt;/H1&gt;
+
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre></section></section></div></div>
 
 		<script>
 

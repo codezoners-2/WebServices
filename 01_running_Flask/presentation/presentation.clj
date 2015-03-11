@@ -183,6 +183,45 @@
 
                    [:p "Start up a Flask server in a virtual environment, serving a 'Hello World' page."]
                    [:p "Bonus: can you switch between Python 2 and Python 3? How could you show the version in the browser?"]
+
+                   [:p "("
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/kick-off/HANDOUT"
+                            "GitHub link")
+                    ".)"]
                    ]]
+
+                 [:section
+                  [:section
+                   (heading "Jinja2 Templating")
+
+                   [:p "Flask supports dynamic web page rendering"]
+
+                   [:ul
+                    [:li "Pulling substrings from URLs"]
+                    [:li "Rendering templates"]]
+                   ]
+
+                  [:section
+                   (subheading "Handler for templates")
+
+                   (include-code "run-template.py")
+
+                   [:ul
+                    [:li "Use the form " (tt "<name>") " to bind part of the URL"]
+                    [:li "The handler (" (tt "index") ") takes an argument with a default value"]
+                    [:li "Use " (tt "render_template") " to render a template (with keyword arguments)"]]
+                   ]
+
+                  [:section
+                   (include-code "template-index.html")
+
+                   [:p "("
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/simple-template/HANDOUT"
+                            "GitHub link")
+                    ".)"]
+
+                   ]
+
+                  ]
 
                  ])
