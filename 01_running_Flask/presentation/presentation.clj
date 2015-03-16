@@ -259,4 +259,48 @@
                    [:p "(Details "
                     (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare/HANDOUT/README.md"
                             "here") ".)"]
-                                      ]]])
+                   ]]
+
+                 [:section
+                  [:section
+                   (heading "Forms")
+
+                   [:ul
+                    [:li "Flask can deal with form posting (via an object called " (tt "request") ")"]
+                    [:li "Handlers can distinguish between " (tt "GET") " and " (tt "POST")]
+                    ]
+                   ]
+
+                  [:section
+                   (include-code "form.html")
+
+                   [:ul
+                    [:li "Note the form action (" (tt "/index") "), method (" (tt "POST")
+                     ") and field name (" (tt "term") ")"]]
+                   ]
+
+                  [:section
+                   (include-code "form-handler.py")]]
+
+                 [:section
+                  [:section
+                   (heading "Exercise 2")
+                   (subheading "Shakespeare with Search")
+
+                   (image "shake-form.png")]
+
+                  [:section
+                   [:ul
+                    [:li "With no search term, just show the form"]
+                    [:li "With a search term, show the form and results (with the search term as place-holder)"]
+                    ]
+
+                   [:p "(Outline "
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare-formed/HANDOUT/"
+                            "here") ".)"]
+
+                   ]
+
+                  ]
+
+                 ])
