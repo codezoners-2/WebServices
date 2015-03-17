@@ -9,5 +9,5 @@ The `logic.py` file contains all the logic to preload the data files, and to cal
 Tasks:
 
 - Read the data files in once, when the server starts, to build a "corpus" of work (filenames mapped to contents)
-- In the `search` function: perform the search, getting results back from `logic.py` and the corpus. How do these results have to be processed or formatted?
-- In the template: turn the formatted results into HTML
+- In the `search` function: perform the search, getting results back from `logic.py` and the corpus. How do these results have to be processed or structured, to pass them into the template? (What is the form of the template?)
+- In the template: turn the structured results into HTML

@@ -151,8 +151,10 @@
 
                    [:ul
                     [:li "Create a new virtual environment (once!) with: " (tt "virtualenv venv")]
-                    [:li "Activate (each session) with " (tt "source venv/bin/activate") " (OS X/Linux) or "
-                     (tt "venv\\\\Scripts\\\\activate") " (Windows)"]
+                    [:li "Activate (each session) with:"
+                     [:ul
+                      [:li (tt "source venv/bin/activate") " (OS X/Linux)"]
+                      [:li (tt "venv\\\\Scripts\\\\activate") " (Windows)"]]]
                     [:li "(The command prompt will change)"]
                     [:li "Do stuff, including " (tt "pip") " - no " (tt "sudo") " needed"]
                     [:li "Deactivate with " (tt "deactivate")]
@@ -215,12 +217,34 @@
                   [:section
                    (include-code "template-index.html")
 
+                   [:p "Templates need to be in a " (tt "templates") " subdirectory"
+                    " alongside the main Python script."]
+
                    [:p "("
                     (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/simple-template/HANDOUT"
                             "GitHub link")
                     ".)"]
 
                    ]
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Exercise 1")
+                   (subheading "Foreground and Background Colours")
+
+                   (image "colours.png")]
+
+                  [:section
+                   [:ul
+                    [:li "Implement a two-colour page"]
+                    [:li "The handler takes URLs beginning " (tt "/coloured/")]
+                    [:li "The colours are separated by " (tt ",")]]
+
+                   [:p "("
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/colour-template/HANDOUT"
+                            "GitHub link")
+                    ".)"]]
                   ]
 
                  [:section
@@ -251,7 +275,7 @@
 
                  [:section
                   [:section
-                   (heading "Exercise 1")
+                   (heading "Exercise 2")
                    (subheading "Shakespeare Revisited")
 
                    [:p "Implement the Shakespeare server."]
@@ -259,7 +283,18 @@
                    [:p "(Details "
                     (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare/HANDOUT/README.md"
                             "here") ".)"]
-                   ]]
+                   ]
+
+                  [:section
+                   (subheading "Bonus: Bootstrap")
+
+                   (image "boot-shake.png")
+
+                   [:p "The template needs to include Bootstrap support."
+                    " Does the handler have to change?"]
+                   ]
+
+                  ]
 
                  [:section
                   [:section
@@ -284,7 +319,7 @@
 
                  [:section
                   [:section
-                   (heading "Exercise 2")
+                   (heading "Exercise 3")
                    (subheading "Shakespeare with Search")
 
                    (image "shake-form.png")]

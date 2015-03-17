@@ -29,17 +29,17 @@ def freqAnalyserNorm(content, keyword):
     >>> sorted(freqAnalyserNorm({'1.txt': 'one\\ntwo\\n',
     ...                          '2.txt': 'three\\nfour\\nthree\\n'},
     ...                         'tHree').items())
-    [('1.txt', [0, 0]), ('2.txt', [2, 100])]
+    [('1.txt', 0), ('2.txt', 2)]
 
     >>> sorted(freqAnalyserNorm({'1.txt': 'one\\ntwo\\nthree\\nTHREE\\nthree\\n',
     ...                          '2.txt': 'three\\nfour\\nthree\\n'},
     ...                         'tHree').items())
-    [('1.txt', [3, 100]), ('2.txt', [2, 66])]
+    [('1.txt', 3), ('2.txt', 2)]
     '''
     corpus = freqAnalyzer(content, keyword)
     maxValue = functools.reduce(max, corpus.values(), 0)
 
-    return {opusName: [content, (content * 100 // maxValue if maxValue > 0 else 0)]
+    return {opusName: content
             for opusName, content in corpus.items()}
 
 # Don't need a main().
