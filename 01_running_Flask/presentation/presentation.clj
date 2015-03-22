@@ -330,12 +330,33 @@
                     [:li "With a search term, show the form and results (with the search term as place-holder)"]
                     ]
 
-                   [:p "(Outline "
+                   [:p "(Code skeleton "
                     (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare-formed/HANDOUT/"
                             "here") ".)"]
 
+                   ]]
+
+                 [:section
+                  [:section
+                   (heading "Exercise 4")
+                   (subheading "Shakespeare Multi-Search")
+
+                   (image "shake-form-3.png")
+
                    ]
 
+                  [:section
+                   [:ul
+                    [:li "Search for three items at once"]
+                    [:li "Modify the search form to have three fields"]
+                    [:li "For each play, draw a stacked progress bar"]
+                    ]
+
+                   [:p "(Detail "
+                    (github "codezoners-2/WebServices/tree/master/01_running_Flask/assignments/shakespeare-formed-coloured/HANDOUT/"
+                            "here") ".)"]
+                   ]
                   ]
+
 
                  ])
