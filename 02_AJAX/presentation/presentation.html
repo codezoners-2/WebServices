@@ -62,21 +62,21 @@
             /* Do something with result (using React). */
         }
        }
-      );</code></pre></section><section><h4>Data comes back (usually) as JSON</h4><ul><li>Convenient Javascript-like notation</li><li>Can be read directly by browser's Javascript</li></ul><p>Example data: <a href="https://api.github.com/users/octocat/gists">Octocat's Gists</a></p></section></section><section><section><h3>Round Trip: Fetching Gists</h3><ul><li>A <emph>gist</emph> is a quick note containing programming code, in any language, formatted/highlighted by GitHub</li></ul><p>(Octocat's <a href="https://gist.github.com/octocat">gists</a>.)</p></section><section><h4>Connecting with React</h4><p>(Source<a href="...">here</a>.)</p><p>Starting at the end:</p><pre><code class="html">var UserGists = React.createClass({
+      );</code></pre></section><section><h4>Data comes back (usually) as JSON</h4><ul><li>Convenient Javascript-like notation</li><li>Can be read directly by browser's Javascript</li></ul><p>Example data: <a href="https://api.github.com/users/octocat/gists">Octocat's Gists</a></p></section></section><section><section><h3>Round Trip: Fetching Gists</h3><ul><li>A <emph>gist</emph> is a quick note containing programming code, in any language, formatted/highlighted by GitHub</li></ul><p>(Octocat's <a href="https://gist.github.com/octocat">gists</a>.)</p></section><section><h4>Connecting with React</h4><p>(Source <a href="...">here</a>.)</p><p>Overview:</p><pre><code class="html">var UserGists = React.createClass({
     getInitialState: function() { ... },
     componentDidMount: function() { ... },
     render: function() { ... }
 });
 
 React.renderComponent(
-    &lt;UserGists source="https://api.github.com/users/octocat/gists" /&gt;,
+    &lt;UserGists /&gt;,
     document.getElementById("content")
 );</code></pre></section><section><h4>Setup</h4><p>The initial state is an empty list (of gists)</p><pre><code class="html">getInitialState: function() {
     // Start with empty list of gists:
     return {gists: []};
 }</code></pre></section><section><h4>Doing the AJAX Call</h4><p>This is fired when React mounts the component into the page</p><pre><code class="html">componentDidMount: function() {
     $.ajax({type: "GET",
-            url: this.props.source,
+            url: "https://api.github.com/users/octocat/gists",
             success: function(result) {
                 // Check component is still in page:
                 if (this.isMounted()) {
@@ -88,10 +88,10 @@ React.renderComponent(
     return (
         // Note the map, to turn each entry into an &lt;LI&gt; with a link and description.
             &lt;div&gt;&lt;ul&gt;{this.state.gists.map(function (x) {
-                return &lt;li&gt;&lt;a href={x.html_url}&gt;{x.description} ...&lt;/a&gt;&lt;/li&gt;;
+                return &lt;li&gt;{x.description}&lt;/li&gt;;
             })}&lt;/ul&gt;&lt;/div&gt;
     );
-}</code></pre></section></section></div></div>
+}</code></pre></section></section><section><section><h3>Exercise 1</h3><h4>More Information...</h4><img height="480" src="images/gists-more.png" style="margin:10px; vertical-align:middle" /><p>Start with the <a href="https://github.com/codezoners-2/WebServices/tree/master/02_AJAX/assignments/gists/HANDOUT">handout code</a>.</p></section><section><h4>Can you...</h4><ul><li>Make the gists into hyperlinks (rather than just text)?</li><li>Include the gist filename and language in each entry (a bit harder...)?</li><li>(Using Bootstrap) render three columns, for three different users?</li><li>(Bonus!) select users from a menu or button bar?</li></ul></section></section></div></div>
 
 		<script>
 

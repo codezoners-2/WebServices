@@ -208,9 +208,10 @@
 
                    (image "gists-more.png")
 
-                   [:p "Start with the " [:a {:href ""} "handout code"] "."]
-
-                   ]
+                   [:p "Start with the "
+                    (github "codezoners-2/WebServices/tree/master/02_AJAX/assignments/gists/HANDOUT"
+                            "handout code")
+                    "."]]
 
                   [:section
                    (subheading "Can you...")
