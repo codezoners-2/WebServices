@@ -94,7 +94,17 @@
                     [:li "Create a new project directory with " (tt "jasmine init")]
                     [:li "Test files are in " (tt "spec/*spec.js")]]
 
-                   (include-code "jasmine.txt")]]
+                   (include-code "jasmine.txt")]
+
+                  [:section
+                   (subheading "Dependencies")
+
+                   [:ul
+                    [:li "Jasmine runs the " [:emph "spec"] " file"]
+                    [:li "The spec file must " (tt "require") " the source file"]
+                    [:li "The source file must add its functions to " (tt "exports")]]
+
+                   [:p "(This is all NodeJS package machinery.)"]]]
 
                  [:section
                   [:section
@@ -111,6 +121,102 @@
                    ]
                   ]
 
+                 [:section
+                  [:section
+                   (heading "AJAX, React and jQuery")
 
+                   [:ul
+                    [:li "AJAX is built on web standards (XHR)"]
+                    [:li "Many frameworks wrap XHR into their own API (D3.js, jQuery, ...)"]
+                    [:li "We can use React to modify a page dynamically (on a response)"]
+                    [:li "Trickiness: the " [:strong "A"] " in " [:strong "A"] "JAX"]
+                    ]]
 
-                 ])
+                  [:section
+                   (subheading "Everything is a Callback")
+
+                   [:ul
+                    [:li "Send request to the server with a callback function to trigger"
+                     " when the reply arrives (sometime later)"]]
+
+                   (include-code "ajax-jquery.js")
+                   ]
+
+                  [:section
+                   (subheading "Data comes back (usually) as JSON")
+
+                   [:ul
+                    [:li "Convenient Javascript-like notation"]
+                    [:li "Can be read directly by browser's Javascript"]]
+
+                   [:p "Example data: " [:a {:href "https://api.github.com/users/octocat/gists"}
+                                         "Octocat's Gists"]]]
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Round Trip: Fetching Gists")
+
+                   [:ul
+                    [:li "A " [:emph "gist"] " is a quick note containing programming code,"
+                     " in any language, formatted/highlighted by GitHub"]]
+
+                   [:p "(Octocat's " [:a {:href "https://gist.github.com/octocat"} "gists"] ".)"]]
+
+                  [:section
+                   (subheading "Connecting with React")
+
+                   [:p "(Source " [:a {:href "..."} "here"] ".)"]
+
+                   [:p "Overview:"]
+
+                   (include-code "gist-react-1.js")
+                   ]
+
+                  [:section
+                   (subheading "Setup")
+
+                   [:p "The initial state is an empty list (of gists)"]
+
+                   (include-code "gist-react-2.js")
+
+                   ]
+
+                  [:section
+                   (subheading "Doing the AJAX Call")
+
+                   [:p "This is fired when React mounts the component into the page"]
+
+                   (include-code "gist-react-3.js")
+
+                   ]
+
+                  [:section
+                   (subheading "Rendering")
+
+                   [:p "Called first, on load; called again when data comes in"]
+
+                   (include-code "gist-react-4.js")
+
+                   ]
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Exercise 1")
+                   (subheading "More Information...")
+
+                   (image "gists-more.png")
+
+                   [:p "Start with the " [:a {:href ""} "handout code"] "."]
+
+                   ]
+
+                  [:section
+                   (subheading "Can you...")
+
+                   [:ul
+                    [:li "Make the gists into hyperlinks (rather than just text)?"]
+                    [:li "Include the gist filename and language in each entry (a bit harder...)?"]
+                    [:li "(Using Bootstrap) render three columns, for three different users?"]
+                    [:li "(Bonus!) select users from a menu or button bar?"]]]]])
