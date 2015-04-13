@@ -56,13 +56,25 @@
 └── spec
     ├── fixme-1-spec.js
     └── support
-        └── jasmine.json</code></pre></section><section><h4>Dependencies</h4><ul><li>Jasmine runs the <emph>spec</emph> file</li><li>The spec file must <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">require</span> the source file</li><li>The source file must add its functions to <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">exports</span></li></ul><p>(This is all NodeJS package machinery.)</p></section></section><section><section><h3>Exercise &frac12;</h3><h4>Unit Testing Revisited</h4><ul><li>We've ported the test examples from <a href="https://github.com/codezoners-2/AgileDevelopment/tree/master/01_basic_testing/assignments/fixme-1/HANDOUT">Python</a> to Javascript (and from DocTest to Jasmine)</li><li>Repeat the exercise in Javascript</li></ul><p>(Exercise <a href="https://github.com/codezoners-2/WebServices/tree/master/02_AJAX/assignments/fixme-1/HANDOUT">here</a>.)</p></section></section><section><section><h3>AJAX, React and jQuery</h3><ul><li>AJAX is built on web standards (XHR)</li><li>Many frameworks wrap XHR into their own API (D3.js, jQuery, ...)</li><li>We can use React to modify a page dynamically (on a response)</li><li>Trickiness: the <strong>A</strong> in <strong>A</strong>JAX</li></ul></section><section><h4>Everything is a Callback</h4><ul><li>Send request to the server with a callback function to trigger when the reply arrives (sometime later)</li></ul><pre><code class="html">$.ajax({type: "GET",
+        └── jasmine.json</code></pre></section><section><h4>Dependencies</h4><ul><li>Jasmine runs the <emph>spec</emph> file</li><li>The spec file must <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">require</span> the source file</li><li>The source file must add its functions to <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">exports</span></li></ul><p>(This is all NodeJS package machinery.)</p></section><section><h4>Code</h4><pre><code class="html">function adder(x, y) {
+    return x + y;
+}
+
+exports.adder = adder;</code></pre><h4>Spec</h4><pre><code class="html">m = require("../fixme-1");
+
+it("adder: adds numbers", function() {
+    expect(m.adder(2, 2)).toBe(4);
+    expect(m.adder(3, 4)).toBe(7);
+});</code></pre></section></section><section><section><h3>Exercise &frac12;</h3><h4>Unit Testing Revisited</h4><ul><li>We've ported the test examples from <a href="https://github.com/codezoners-2/AgileDevelopment/tree/master/01_basic_testing/assignments/fixme-1/HANDOUT">Python</a> to Javascript (and from DocTest to Jasmine)</li><li>Repeat the exercise in Javascript</li></ul><p>(Exercise <a href="https://github.com/codezoners-2/WebServices/tree/master/02_AJAX/assignments/fixme-1/HANDOUT">here</a>.)</p></section></section><section><section><h3>AJAX, React and jQuery</h3><ul><li>AJAX is built on web standards (XHR)</li><li>Many frameworks wrap XHR into their own API (D3.js, jQuery, ...)</li><li>We can use React to modify a page dynamically (on a response)</li><li>Trickiness: the <strong>A</strong> in <strong>A</strong>JAX</li></ul></section><section><h4>Everything is a Callback</h4><ul><li>Send request to the server with a callback function to trigger when the reply arrives (sometime later)</li></ul><pre><code class="html">$.ajax({type: "GET",
         url: "http://[.....]",
         success: function(result) {
             /* Do something with result (using React). */
+        },
+        error: function(e) {
+            /* Deal with error. */
         }
        }
-      );</code></pre></section><section><h4>Data comes back (usually) as JSON</h4><ul><li>Convenient Javascript-like notation</li><li>Can be read directly by browser's Javascript</li></ul><p>Example data: <a href="https://api.github.com/users/octocat/gists">Octocat's Gists</a></p></section></section><section><section><h3>Round Trip: Fetching Gists</h3><ul><li>A <emph>gist</emph> is a quick note containing programming code, in any language, formatted/highlighted by GitHub</li></ul><p>(Octocat's <a href="https://gist.github.com/octocat">gists</a>.)</p></section><section><h4>Connecting with React</h4><p>(Source <a href="...">here</a>.)</p><p>Overview:</p><pre><code class="html">var UserGists = React.createClass({
+      );</code></pre></section><section><h4>Data comes back (usually) as JSON</h4><ul><li>Convenient Javascript-like notation</li><li>Can be read directly by browser's Javascript</li></ul><p>Example data: <a href="https://api.github.com/users/octocat/gists">Octocat's Gists</a></p></section></section><section><section><h3>Round Trip: Fetching Gists</h3><ul><li>A <emph>gist</emph> is a quick note containing programming code, in any language, formatted/highlighted by GitHub</li></ul><p>(Octocat's <a href="https://gist.github.com/octocat">gists</a>.)</p></section><section><h4>Connecting with React</h4><p>(Source <a href="https://github.com/codezoners-2/WebServices/tree/master/02_AJAX/assignments/gists/HANDOUT">here</a>.)</p><p>Overview:</p><pre><code class="html">var UserGists = React.createClass({
     getInitialState: function() { ... },
     componentDidMount: function() { ... },
     render: function() { ... }

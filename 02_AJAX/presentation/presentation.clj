@@ -104,7 +104,15 @@
                     [:li "The spec file must " (tt "require") " the source file"]
                     [:li "The source file must add its functions to " (tt "exports")]]
 
-                   [:p "(This is all NodeJS package machinery.)"]]]
+                   [:p "(This is all NodeJS package machinery.)"]]
+
+                  [:section
+                   (subheading "Code")
+                   (include-code "adder-code.js")
+                   (subheading "Spec")
+                   (include-code "adder-spec.js")]
+
+                  ]
 
                  [:section
                   [:section
@@ -166,7 +174,9 @@
                   [:section
                    (subheading "Connecting with React")
 
-                   [:p "(Source " [:a {:href "..."} "here"] ".)"]
+                   [:p "(Source "
+                    (github "codezoners-2/WebServices/tree/master/02_AJAX/assignments/gists/HANDOUT" "here")
+                    ".)"]
 
                    [:p "Overview:"]
 
