@@ -38,7 +38,8 @@ and returns a JSON object like this:
 	"minfreq": 10,
 	"maxfreq": 30,
 	"searchterm": "war",
-	"totalentries": 2,}'
+	"totalentries": 2,
+}'
 ```
 I've already provided the test to make your life easier. To run the test, execute `python -m doctest logic.py`. To implement the function follow these steps:
   * create an empty list called `stats`. This is where we are going to store
