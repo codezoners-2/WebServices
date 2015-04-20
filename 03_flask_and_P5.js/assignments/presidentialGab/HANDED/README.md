@@ -7,6 +7,9 @@
   * `freqAnalyzerNorm` normalises for speech length (10.000 words)
   * added function `multiFreqAnalyserNorm`
   * the data structure we're going after
+3. Examples of APIs using JSON:
+  * [Spotify](https://developer.spotify.com/web-api/console/)
+  * [The Guardian](http://open-platform.theguardian.com/)
 
 In this exercise we're going to be learning how to server a JSON object from a flask server as well as how to read it via AJAX calls on a website and dynamically alter the contents of the DOM.
 
@@ -35,7 +38,7 @@ and returns a JSON object like this:
 		  "day": 3}
 		],
 	"startyear": 1790,
-	"endyear": 1790,
+	"endyear": 1994,
 	"minfreq": 10,
 	"maxfreq": 30,
 	"searchterm": "war",
@@ -47,8 +50,8 @@ I've already provided the test to make your life easier. To run the test, execut
   * for all tuples in the `statisticsDict` dictionary  (ie `for speechdata, freq in statisticsDics.items()`) do the following (note the indentation):
     * create an empty dictionary `tempDict`
     * get rid of the `data/` path so that you keep only the filename. You'll need to use slicing to do that and use `rfind` to find the last `/` in order to slice there. Save the cleanedup string in a variable called speech.
-    * using `split()` split the string at the commas (`,`), get the first element which is the date, do a further split on the dots and get the first element which should be the year. All this can and should be on one line. Save the value extracted in the `tempDict` dictionary under the key `year`.
-    * using the above technique extract the month, day, president's name and party and save them each under the following keys: `month`,`day`,`president`,`party`.
+    * using `split()` split the string at the commas (`,`), get the first element which is the date, do a further split on the dots and get the first element which should be the year. All this can and should be on one line. Save the value extracted in the `tempDict` dictionary under the key `year`. Convert the result to an integer by running the `int()` function
+    * using the above technique extract the month, day, president's name and party and save them each under the following keys: `month`,`day`,`president`,`party`. Don't forget to convert to int the month and tha day.
     * save the `freq` value from the `for` statement under the key `freq` in the `tempDict`
     * append `tempDict` in the `stats` list
   * create an empty dictionary called `results`

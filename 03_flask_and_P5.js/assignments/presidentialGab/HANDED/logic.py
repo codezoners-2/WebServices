@@ -52,7 +52,7 @@ def prepareJSON(statisticsDict, term):
 	True
 	
 	'''
-	pass
+	return '{"dummy":"data"}'
 
 
 # main provided in order to allow command line functionality
