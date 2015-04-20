@@ -66,7 +66,7 @@ I've already provided the test to make your life easier. To run the test, execut
     * create a `statisticsJSON` variable and store in it the value returned by the `prepareJSON()` function. The latter takes two parameters. The `statisticsDict` generated in the previous step and the `term`.
     * return the `statisticsJSON`
   * else if the `term` is empty return an empty dictionary (ie `{}`)
-  * run the flask server by running `python presidentialGab.py` and visit `http://localhost:8080/search/war` to see how many times each president mentioned the word war.
+  * run the flask server by running `python presidentialGab.py` and visit [http://localhost:8080/search/war] to see how many times each president mentioned the word war.
 
 ### front end
 3. Tomorrow :)
