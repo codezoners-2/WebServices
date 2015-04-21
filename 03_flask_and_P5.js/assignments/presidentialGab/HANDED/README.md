@@ -86,11 +86,8 @@ I've already provided the test to make your life easier. To run the test, execut
 10. set the class of the button by adding this `button.class("btn btn-default");`
 11. initialize `speechDataSpan` (hint: you need to call `createSpan`)
 12. set the parent of speechDataSpan to `speechDataID`
-
-### fetchStatistics function
 13. fetch the value of the `keywordInput` field and save it in `searchTerm` (hint: you'll need to use the `value()` function)
 14. set the value of the `searchTermSpan` equal to the `searchTerm`.  (hint: you'll need to use the `html()` function). Also, uncomment the next line. This is the line that fetches the JSON file. 
-### drawStatistics function
 15. read the jsonobject's `minfreq` variable and save it inside a variable called `minfreq`.
 16. Do the same for maxfreq
 17. Do the same for startyear
