@@ -72,4 +72,29 @@ I've already provided the test to make your life easier. To run the test, execut
   * run the flask server by running `python presidentialGab.py` and visit [http://localhost:8080/search/war](http://localhost:8080/search/war) to see how many times each president mentioned the word war.
 
 ### front end
-3. Tomorrow :)
+#### demo `modifyingElements` example
+#### setup function
+1. create a canvas of size 1200x200 and save it in `canvas`
+2. set the parent of canvas to `canvasID`
+3. create an input and save it in the `keywordInput` variable
+4. set the parent of keywordInput to `keywordInputID`
+5. initialize `searchTermSpan` (hint: you need to call `createSpan`)
+6. set the parent of searchTermSpan to `searchtermID`
+7. create a button and give it the label `search`
+8. set the button's parent to `keywordInputID`
+9. add interaction to the button by adding this line `button.mousePressed(fetchStatistics);`
+10. set the class of the button by adding this `button.class("btn btn-default");`
+11. initialize `speechDataSpan` (hint: you need to call `createSpan`)
+12. set the parent of speechDataSpan to `speechDataID`
+#### fetchStatistics function
+13. fetch the value of the `keywordInput` field and save it in `searchTerm` (hint: you'll need to use the `value()` function)
+14. set the value of the `searchTermSpan` equal to the `searchTerm`.  (hint: you'll need to use the `html()` function). Also, uncomment the next line. This is the line that fetches the JSON file. 
+#### drawStatistics function
+15. read the jsonobject's `minfreq` variable and save it inside a variable called `minfreq`.
+16. Do the same for maxfreq
+17. Do the same for startyear
+18. Do the same for endyear
+19. Do the same for total entries
+20. Now we're inside the for loop because we want to traverse inside the statistics list. We'll use `x` of the loop as an index on the `statistics` list of the `jsonobject` and get the party (Hint: `jsonobject.statistics[x].party;`). Save the return value in a variable called `party`.
+21. Do the same for year. The next lines plot the ellipses based on the values you got from the statistics table. In the section marked as `SETTING HTML STRING` I am building a string to display under the table. Notice that the string is normal html code.
+22. Set the contents of `speechDataSpan` to `htmlString` (Hint: you'll need to use the `html()` function)
