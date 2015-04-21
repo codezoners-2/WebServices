@@ -71,9 +71,9 @@ I've already provided the test to make your life easier. To run the test, execut
   * else if the `term` is empty return an empty dictionary (ie `{}`)
   * run the flask server by running `python presidentialGab.py` and visit [http://localhost:8080/search/war](http://localhost:8080/search/war) to see how many times each president mentioned the word war.
 
-### front end
-#### demo `modifyingElements` example
-#### setup function
+## front end
+### demo `modifyingElements` example
+### setup function
 1. create a canvas of size 1200x200 and save it in `canvas`
 2. set the parent of canvas to `canvasID`
 3. create an input and save it in the `keywordInput` variable
@@ -86,10 +86,11 @@ I've already provided the test to make your life easier. To run the test, execut
 10. set the class of the button by adding this `button.class("btn btn-default");`
 11. initialize `speechDataSpan` (hint: you need to call `createSpan`)
 12. set the parent of speechDataSpan to `speechDataID`
-#### fetchStatistics function
+
+### fetchStatistics function
 13. fetch the value of the `keywordInput` field and save it in `searchTerm` (hint: you'll need to use the `value()` function)
 14. set the value of the `searchTermSpan` equal to the `searchTerm`.  (hint: you'll need to use the `html()` function). Also, uncomment the next line. This is the line that fetches the JSON file. 
-#### drawStatistics function
+### drawStatistics function
 15. read the jsonobject's `minfreq` variable and save it inside a variable called `minfreq`.
 16. Do the same for maxfreq
 17. Do the same for startyear
