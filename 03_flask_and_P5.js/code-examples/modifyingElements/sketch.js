@@ -14,6 +14,8 @@ function setup() {
   myInput.parent("myInputContainer");
   
   var myButton = createButton("search");
+  myButton.parent("myInputContainer");
+  myButton.mousePressed(buttonPressed);
   
   noStroke();
 }
@@ -34,4 +36,9 @@ function canvasPressed()
   else {
 	colorNameElement.html("green");  
   }
+}
+
+function buttonPressed()
+{
+	colorNameElement.html("you pressed the button");
 }
