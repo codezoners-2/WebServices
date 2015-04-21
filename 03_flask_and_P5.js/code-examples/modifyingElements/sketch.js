@@ -13,6 +13,8 @@ function setup() {
   myInput = createInput("");
   myInput.parent("myInputContainer");
   
+  var myButton = createButton("search");
+  
   noStroke();
 }
 
