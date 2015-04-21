@@ -40,5 +40,5 @@ function canvasPressed()
 
 function buttonPressed()
 {
-	colorNameElement.html(tempValue);
+	colorNameElement.html(myInput.value());
 }
