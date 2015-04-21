@@ -52,7 +52,8 @@ function drawStatistics()
   for (var x=0; x<totalentries; x++)
   {
 	  //step 20
-	  //step 21
+	  //step 21.a
+	  //step 21.b
 	  
 	  var xLoc = map(year, startyear, endyear, 0+padding, width-padding); //start later, end sooner on canvas
 	  var diam = map(freq, minfreq, maxfreq, 0, 60);	  
