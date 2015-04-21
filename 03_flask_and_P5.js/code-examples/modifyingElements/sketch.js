@@ -7,7 +7,7 @@ function setup() {
   myCanvas.parent("myCanvasContainer");
   myCanvas.mousePressed(canvasPressed);
 
-  colorNameElement = createSpan("nothing");
+  colorNameElement = createSpan("default value");
   colorNameElement.parent("colorNameContainer");
   
   myInput = createInput("");
