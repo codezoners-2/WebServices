@@ -94,5 +94,5 @@ I've already provided the test to make your life easier. To run the test, execut
 18. Do the same for endyear
 19. Do the same for total entries
 20. Now we're inside the for loop because we want to traverse inside the statistics list. We'll use `x` of the loop as an index on the `statistics` list of the `jsonobject` and get the party (Hint: `jsonobject.statistics[x].party;`). Save the return value in a variable called `party`.
-21. Do the same for year. The next lines plot the ellipses based on the values you got from the statistics table. In the section marked as `SETTING HTML STRING` I am building a string to display under the table. Notice that the string is normal html code.
+21. Do the same for year and freq. The next lines plot the ellipses based on the values you got from the statistics table. In the section marked as `SETTING HTML STRING` I am building a string to display under the table. Notice that the string is normal html code.
 22. Set the contents of `speechDataSpan` to `htmlString` (Hint: you'll need to use the `html()` function)
