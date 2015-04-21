@@ -40,7 +40,5 @@ function canvasPressed()
 
 function buttonPressed()
 {
-	var tempValue = "<h1>" + myInput.value() + "</h1>";
-	tempValue += "<h2>" + "theo" + "</h2>";
 	colorNameElement.html(tempValue);
 }
