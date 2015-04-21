@@ -1,5 +1,6 @@
 var colorNameElement;
 var myCanvas;
+var myInput;
 
 function setup() {
   myCanvas = createCanvas(800, 300);
@@ -8,6 +9,9 @@ function setup() {
 
   colorNameElement = createSpan("nothing");
   colorNameElement.parent("colorName");
+  
+  myInput = createInput("");
+  myInput.parent("myInputContainer");
   
   noStroke();
 }
