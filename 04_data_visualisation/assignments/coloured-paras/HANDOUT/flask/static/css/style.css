@@ -1,0 +1,9 @@
+body {
+  padding-top: 50px;
+}
+
+/* Paragraphs start off with white text. */
+
+p {
+    color: #FFFFFF;
+}
