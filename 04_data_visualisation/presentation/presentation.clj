@@ -130,6 +130,8 @@
                     [:li "Blend between two colours: from red (top) to green (bottom)"]]
 
                    [:p "Everything here can be done in the server; the front-end doesn't change"]
+
+                   [:p "(Template " (github "codezoners-2/WebServices/tree/master/04_data_visualisation/assignments/coloured-paras" "here") ".)"]
                    ]]
 
                  [:section
@@ -170,6 +172,9 @@
                     [:li "A new random haiku is served every 10 seconds"]
                     [:li "Haikus are stored in files on the server"]
                     [:li "The display cycle fades in a haiku line by line, and fades it out again"]]
+
+                   [:p "(Template " (github "codezoners-2/WebServices/tree/master/04_data_visualisation/assignments/haiku-kiosk/HANDOUT" "here") ".)"]
+
 
                    ]
                   ]

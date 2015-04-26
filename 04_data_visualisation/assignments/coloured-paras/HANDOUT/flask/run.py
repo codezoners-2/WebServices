@@ -1,6 +1,5 @@
 from flask import Flask, render_template, jsonify
 import os, random
-import logic
 
 app = Flask(__name__)
 
