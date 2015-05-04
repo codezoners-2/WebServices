@@ -2,10 +2,6 @@ var svg = d3.select("div#inner").append("svg")
         .attr("width", 600)
         .attr("height", 600);
 
-function rgb_str(d) {
-    return "rgb(" + (d.rgb[0]*255).toFixed() + ", " + (d.rgb[1]*255).toFixed() + ", " + (d.rgb[2]*255).toFixed() + ")";
-}
-
 var counter = 0;
 
 function oneCycle(path) {
