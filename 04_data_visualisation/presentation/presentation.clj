@@ -178,4 +178,78 @@
 
                    ]
                   ]
+
+                 [:section
+                  [:section
+                   (heading "Graphics with SVG")
+
+                   [:p "SVG is scalable vector graphics written in the web page"]
+
+                   (include-code "svg.html")
+
+                   (image-h 100 "spot.png")
+                   ]
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Dynamic Selections")
+
+                   [:p "How do we deal with varying amounts of data?"]
+
+                   [:ul
+                    [:li "Use the " (tt "enter") " method to deal with new data"]
+                    [:li "Use the " (tt "exit") " method to deal with data that's removed"]]]
+
+                  [:section
+                   (subheading "Example (with SVG)")
+
+                   (include-code "selections-1.js")
+
+                   [:p "Data binding, as before, but we (probably) need a key function"]]
+
+                  [:section
+                   [:p "As before: set attributes for existing elements"]
+                   (include-code "selections-2.js")]
+
+                  [:section
+                   [:p "The new stuff: set attributes for elements "
+                    [:em "entering"] " or " [:em "exiting"] " the page"]
+
+                   (include-code "selections-3.js")
+                   ]
+
+                  ]
+
+                 [:section
+                  [:section
+                   (heading "Exercise 3")
+                   (subheading "Kinetic Art")
+                   (image "art-1.png")
+                   ]
+
+                  [:section
+                   (image "art-2.png")]
+
+                  [:section
+                   [:ul
+                    [:li "The example code provides two simple art pieces: " (tt "/page/simple")
+                     " and " (tt "/page/stack")]
+
+                    [:li "Can you implement the following examples (or better ones)?"]
+
+                    [:li "(The D3.js code is almost - but not quite - complete."
+                     " Can you work out what's missing?)"]
+
+                    [:li "(Everything else can be done in Python: " (tt "run.py")
+                     " and/or " (tt "logic.py") ")"]
+
+                    ]]
+
+                  [:section (video "d3-hal.mov")]
+                  [:section (video "d3-dots.mov")]
+                  [:section (video "d3-blink.mov")]
+                  [:section (video "d3-shift.mov")]
+                  [:section (video "d3-spin.mov")]]
+
 ])

@@ -58,7 +58,26 @@ d3.selectAll("p")
     .transition()
     .delay(function (d, i) { return i * 500; })
     .duration(3000)
-    .style("color", "black");</code></pre></section><section><h4>More Timing Support</h4><ul><li>Run a function periodically using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">setInterval</span></li><li>Delay and run a function once using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">setTimeout</span></li></ul><pre><code class="html">setInterval(function () {...}, 5000);</code></pre><pre><code class="html">setTimeout(function () {...}, 1000);</code></pre></section></section><section><section><h3>Exercise 2</h3><h4>Haiku Kiosk</h4><img height="480" src="images/haiku.png" style="margin:10px; vertical-align:middle" /></section><section><h4>Haiku Kiosk</h4><ul><li>A new random haiku is served every 10 seconds</li><li>Haikus are stored in files on the server</li><li>The display cycle fades in a haiku line by line, and fades it out again</li></ul><p>(Template <a href="https://github.com/codezoners-2/WebServices/tree/master/04_data_visualisation/assignments/haiku-kiosk/HANDOUT">here</a>.)</p></section></section></div></div>
+    .style("color", "black");</code></pre></section><section><h4>More Timing Support</h4><ul><li>Run a function periodically using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">setInterval</span></li><li>Delay and run a function once using <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">setTimeout</span></li></ul><pre><code class="html">setInterval(function () {...}, 5000);</code></pre><pre><code class="html">setTimeout(function () {...}, 1000);</code></pre></section></section><section><section><h3>Exercise 2</h3><h4>Haiku Kiosk</h4><img height="480" src="images/haiku.png" style="margin:10px; vertical-align:middle" /></section><section><h4>Haiku Kiosk</h4><ul><li>A new random haiku is served every 10 seconds</li><li>Haikus are stored in files on the server</li><li>The display cycle fades in a haiku line by line, and fades it out again</li></ul><p>(Template <a href="https://github.com/codezoners-2/WebServices/tree/master/04_data_visualisation/assignments/haiku-kiosk/HANDOUT">here</a>.)</p></section></section><section><section><h3>Graphics with SVG</h3><p>SVG is scalable vector graphics written in the web page</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+
+    &lt;h1&gt;My first SVG&lt;/h1&gt;
+
+    &lt;svg width="100" height="100"&gt;
+      &lt;circle cx="50" cy="50" r="40"
+              stroke="green" stroke-width="4" fill="yellow" /&gt;
+    &lt;/svg&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre><img height="100" src="images/spot.png" style="margin:10px; vertical-align:middle" /></section></section><section><section><h3>Dynamic Selections</h3><p>How do we deal with varying amounts of data?</p><ul><li>Use the <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">enter</span> method to deal with new data</li><li>Use the <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">exit</span> method to deal with data that's removed</li></ul></section><section><h4>Example (with SVG)</h4><pre><code class="html">var circle = svg.selectAll("circle");
+c = circle.data(json.result, function(d) { return +d.key; });</code></pre><p>Data binding, as before, but we (probably) need a key function</p></section><section><p>As before: set attributes for existing elements</p><pre><code class="html">c.attr("cx", function (d) { return d.x * 600; })
+    .attr("cy", function (d) { return d.y * 600; })
+    .attr("r", function(d) { return d.r * 40; });</code></pre></section><section><p>The new stuff: set attributes for elements <em>entering</em> or <em>exiting</em> the page</p><pre><code class="html">c.enter().append("circle")
+    .attr("cx", function (d) { return d.x * 600; })
+    .attr("cy", function (d) { return d.y * 600; })
+    .attr("r", function(d) { return d.r * 40; });
+
+c.exit().remove();</code></pre></section></section><section><section><h3>Exercise 3</h3><h4>Kinetic Art</h4><img height="480" src="images/art-1.png" style="margin:10px; vertical-align:middle" /></section><section><img height="480" src="images/art-2.png" style="margin:10px; vertical-align:middle" /></section><section><ul><li>The example code provides two simple art pieces: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">/page/simple</span> and <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">/page/stack</span></li><li>Can you implement the following examples (or better ones)?</li><li>(The D3.js code is almost - but not quite - complete. Can you work out what's missing?)</li><li>(Everything else can be done in Python: <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">run.py</span> and/or <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">logic.py</span>)</li></ul></section><section><video controls="1" data-autoplay="1" height="480"><source src="media/d3-hal.mov" /></video></section></section></div></div>
 
 		<script>
 
