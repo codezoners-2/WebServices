@@ -242,9 +242,10 @@
                      " Can you work out what's missing?)"]
 
                     [:li "(Everything else can be done in Python: " (tt "run.py")
-                     " and/or " (tt "logic.py") ")"]
+                     " and/or " (tt "logic.py") ".)"]]
 
-                    ]]
+                   [:p "(Code is "
+                    (github "codezoners-2/WebServices/tree/master/04_data_visualisation/assignments/damian/HANDOUT" "here") ".)"]]
 
                   [:section (video "d3-hal.mov")]
                   [:section (video "d3-dots.mov")]
