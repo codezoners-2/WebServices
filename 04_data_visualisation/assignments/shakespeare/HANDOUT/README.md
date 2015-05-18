@@ -30,6 +30,8 @@ The handout code has some hard-wired pie patterns, with text. Can you modify thi
 - Notice that the text in the Shakespeare pie is actually rotated, to read out of (or into) the centre of the pie. Can you work out how to do this? (Do some googling to see how it's done in the examples. We're already using this technique to put the text in the right place.)
 
 - In some of the Shakespeare word searches, play titles appear to overlap. Why does this happen? How would you prevent it?
+
+- Notice that, in the original example, the labels jump to their end point before the segments start to move. This is rather untidy. If you want to try to transition them to their new locations, have a go! Otherwise, do what I did and remove the labels before the transition and put them back at the end. (Look at the Haiku example for hints on how to do this.)
   
 ## BONUS
 
