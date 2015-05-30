@@ -16,17 +16,19 @@ def index():
 
 @app.route('/one-two')
 def pattern1():
-    return jsonify({'result': [{'text': 'ONE', 'value': 50},
-                               {'text': 'TWO', 'value': 50}]})
+    ll = [{'text': 'ONE', 'value': 50},
+          {'text': 'TWO', 'value': 50}]
+    for i in range(2, 20):
+        ll.append({'text': None, 'value': 0})
+
+    return jsonify({'result': ll})
 
 @app.route('/random')
 def pattern2():
-    return jsonify({'result': [{'text': 'R1', 'value': random.randint(1, 10)},
-                               {'text': 'R2', 'value': random.randint(1, 10)},
-                               {'text': 'R3', 'value': random.randint(1, 10)}]})
+    return jsonify({'result': [{'text': i, 'value': random.randint(1, 20)} for i in range(20)]})
 
-@app.route('/twenty')
+@app.route('/ten')
 def pattern3():
-    return jsonify({'result': [{'text': i, 'value': 1} for i in range(20)]})
+    return jsonify({'result': [{'text': i, 'value': (i % 2)} for i in range(20)]})
 
 app.run(host='0.0.0.0', port=8080, debug=True)

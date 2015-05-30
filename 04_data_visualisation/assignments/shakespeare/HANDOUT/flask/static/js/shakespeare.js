@@ -34,7 +34,11 @@ function go(url) {
 
         g.append("path")
             .attr("d", arc)
-            .style("fill", function (d, i) { return color(i); });
+            .style("fill", function (d, i) { return color(i); })
+            .each(function(d) {
+                console.log("enter on " + JSON.stringify(d));
+                this._current = d.data;
+            });
 
         g.append("text")
             .attr("transform", function (d) {
@@ -46,7 +50,11 @@ function go(url) {
 
         // For all data: update arcs and text:
         data.select("path")
-            .attr("d", arc);
+            .transition()
+            .delay(250)
+            .duration(2000)
+        /*.attr("d", arc)*/  /*linear tween: horrid!*/
+            .attrTween("d", arcTween);
 
         data.select("text")
             .text(function (d) { return d.data.text; })
@@ -57,4 +65,13 @@ function go(url) {
         // Remove obsolete elements:
         data.exit().remove();
     });
+}
+
+function arcTween(a) {
+    console.log("_current: " + this._current);
+    var i = d3.interpolate(this._current, a);
+    this._current = i(0);
+    return function(t) {
+        return arc(i(t));
+    };
 }
