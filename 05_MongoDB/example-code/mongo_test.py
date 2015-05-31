@@ -2,20 +2,31 @@
 Quick test for Mongo DB.
 '''
 
-from mongoengine import *
+import mongoengine as db
 
-c = connect(host=("mongodb://test1:%s@ds033390.mongolab.com:33390/test1" % raw_input("pass: ")))
+passwd = raw_input("pass: ")
+c = db.connect(host=("mongodb://test1:%s@ds033390.mongolab.com:33390/test1" % passwd))
 
-class Person(Document):
-    first_name = StringField(required=True)
-    last_name = StringField(required=True)
+class Person(db.Document):
+    first_name = db.StringField(required=True)
+    last_name = db.StringField(required=True)
 
-CREATE = False
+for p in Person.objects.all():
+    p.delete()
 
-if CREATE:
-    me = Person(first_name="Nick", last_name="Rothwell")
-    me.save()
-    # After this, we have a collection called "person".
+for first_name, last_name in [('Max', 'Rockatansky'),
+                              ('Imperator', 'Furiosa'),
+                              ('Immortan', 'Joe'),
+                              ('Imperator', 'Ripsaw')]:
+    Person(first_name=first_name, last_name=last_name).save()
 
-for p in Person.objects:
-    print p.last_name
+for p in Person.objects.all():
+    print p.first_name, p.last_name
+
+print "---"
+
+for p in Person.objects(first_name="Imperator"):
+    p.delete()
+
+for p in Person.objects.all():
+    print p.first_name, p.last_name
