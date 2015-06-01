@@ -1,0 +1,10 @@
+<HEAD>
+  <TITLE>Search term: {{ term }}</TITLE>
+</HEAD>
+<BODY>
+  <UL>
+    {% for name, amounts in items %}
+        <LI>{{ name }} : <B>{{ amounts[0] }} ({{ amounts[1] }}%)</B></LI>
+    {% endfor %}
+  </UL>
+</BODY>

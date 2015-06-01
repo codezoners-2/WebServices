@@ -1,0 +1,19 @@
+div.container form {
+    padding-top: 20px;
+}
+
+body {
+  padding-top: 10px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+img.banner
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
