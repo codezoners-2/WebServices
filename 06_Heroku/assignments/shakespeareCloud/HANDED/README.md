@@ -29,7 +29,7 @@ In this exercise we are going to take a classic and put it on the cloud using He
 ### Store your app in a Git repository
   * create a `.gitignore` file
   * fill it with the following two lines:
-  ```
+  * ```
   venv
   *.pyc
   ```
