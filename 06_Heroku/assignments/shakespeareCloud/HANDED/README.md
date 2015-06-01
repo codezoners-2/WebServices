@@ -34,7 +34,7 @@ In this exercise we are going to take a classic and put it on the cloud using He
   venv
   *.pyc
   ```
-  which tell the git not to upload your virtual environment to heroku as we don't need it as well as any compiled python code.
+  which tells the git not to upload your virtual environment to heroku as we don't need it as well as any compiled python code.
   * run `git init` to initialize an empty repository
   * run `git add .` to add all files (apart from the ones inside the `.gitignore`)
   * run `git commit -m "init"` to commit the additions/changes you made. This should print a list of all the files added to the repository.
