@@ -4,8 +4,12 @@ Quick test for Mongo DB.
 
 import mongoengine as db
 
+dbname = "test1"
+user = "test1"
 passwd = raw_input("pass: ")
-c = db.connect(host=("mongodb://test1:%s@ds033390.mongolab.com:33390/test1" % passwd))
+
+c = db.connect(host=("mongodb://{user}:{passwd}@ds033390.mongolab.com:33390/{dbname}"
+                     .format(user=user, passwd=passwd, dbname=dbname)))
 
 class Person(db.Document):
     first_name = db.StringField(required=True)

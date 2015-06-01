@@ -46,8 +46,12 @@
 pip uninstall pymongo
 pip install pymongo==2.8</code></pre></section></section><section><section><h3>Getting started</h3><pre><code class="html">import mongoengine as db
 
+dbname = "test1"
+user = "test1"
 passwd = raw_input("pass: ")
-c = db.connect(host=("mongodb://test1:%s@ds033390.mongolab.com:33390/test1" % passwd))</code></pre><p>(Note the <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">raw_input</span> to avoid storing a password in the code)</p></section><section><h3>Document Classes</h3><pre><code class="html">class Person(db.Document):
+
+c = db.connect(host=("mongodb://{user}:{passwd}@ds033390.mongolab.com:33390/{dbname}"
+                     .format(user=user, passwd=passwd, dbname=dbname)))</code></pre><p>(Note the <span style="font-family:monospace; background-color:rgba(150, 150, 150, 0.5); padding: 0px 5px;">raw_input</span> to avoid storing a password in the code)</p></section><section><h3>Document Classes</h3><pre><code class="html">class Person(db.Document):
     first_name = db.StringField(required=True)
     last_name = db.StringField(required=True)</code></pre></section><section><h3>Creating Documents</h3><pre><code class="html">p = Person(first_name="Max", last_name="Rockatansky")
 p.save()</code></pre></section><section><h3>Listing Documents</h3><pre><code class="html">for p in Person.objects.all():
