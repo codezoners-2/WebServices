@@ -17,7 +17,7 @@ In this exercise we are going to take a classic and put it on the cloud using He
   * run `virtualenv venv`
   * run `source venv/bin/activate`
   * run `pip install Flask gunicorn` which installs the gunicon webserver, a server designed to run python apps. Until now we were running our apps on the development server of Flask, which is not ideal for production environments.
-  * remove APP line from code
+  * remove the `app.run(host='0.0.0.0', port=8080, debug=True)` line from code
 
 ### Declare process types with Procfile
   * create a `Procfile` in the root directory and write in it this: `web: gunicorn shakecloud:app --log-file=-` which tells heroku what kind of processes it needs to run (remember web vs. worker)
