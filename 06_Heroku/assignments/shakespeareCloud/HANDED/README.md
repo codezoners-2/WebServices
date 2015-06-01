@@ -27,7 +27,7 @@ In this exercise we are going to take a classic and put it on the cloud using He
   * Run `pip freeze > requirements.txt` which saves all the modules used by your app. This includes Flask, Jinja, Gunicorn etc. Open up the `requirements.txt` file to see what your application requires.
 
 ### Store your app in a Git repository
-  * create a `.gitignore` file
+  * create a file called `.gitignore` (dot intended)
   * fill it with the following two lines:
   
   ```
