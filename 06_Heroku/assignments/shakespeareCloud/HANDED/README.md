@@ -20,7 +20,7 @@ In this exercise we are going to take a classic and put it on the cloud using He
   * remove the `app.run(host='0.0.0.0', port=8080, debug=True)` line from the original code. This is because we don't want the development web server to run at the same time as the gunicorn server. You only do that when you are ready to deploy on Heroku. For playing on your machine you should leave that in.
 
 ### Declare process types with Procfile
-  * create a empty file called `Procfile` in the root directory and write in it this: `web: gunicorn shakecloud:app --log-file=-` which tells heroku what kind of processes it needs to run (remember web vs. worker)
+  * create an empty file called `Procfile` in the root directory and write in it this: `web: gunicorn shakecloud:app --log-file=-` which tells heroku what kind of processes it needs to run (remember web vs. worker)
   * **important**: replace the `shakecloud` word with something that is unique to you. Perhaps a username or alias you often use. That will be the name of your app. Make sure you rename the `shakecloud.py` file to that too.
 
 ### Specify dependencies with Pip
