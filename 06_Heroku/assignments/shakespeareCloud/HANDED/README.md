@@ -17,23 +17,24 @@ In this exercise we are going to take a classic and put it on the cloud using He
   * run `virtualenv venv`
   * run `source venv/bin/activate`
   * run `pip install Flask gunicorn` which installs the gunicon webserver, a server designed to run python apps. Until now we were running our apps on the development server of Flask, which is not ideal for production environments.
-  * remove APP line from code
+  * remove the `app.run(host='0.0.0.0', port=8080, debug=True)` line from the original code. This is because we don't want the development web server to run at the same time as the gunicorn server. You only do that when you are ready to deploy on Heroku. For playing on your machine you should leave that in.
 
 ### Declare process types with Procfile
-  * create a `Procfile` in the root directory and write in it this: `web: gunicorn shakecloud:app --log-file=-` which tells heroku what kind of processes it needs to run (remember web vs. worker)
+  * create an empty file called `Procfile` in the root directory and write in it this: `web: gunicorn shakecloud:app --log-file=-` which tells heroku what kind of processes it needs to run (remember web vs. worker)
   * **important**: replace the `shakecloud` word with something that is unique to you. Perhaps a username or alias you often use. That will be the name of your app. Make sure you rename the `shakecloud.py` file to that too.
 
 ### Specify dependencies with Pip
   * Run `pip freeze > requirements.txt` which saves all the modules used by your app. This includes Flask, Jinja, Gunicorn etc. Open up the `requirements.txt` file to see what your application requires.
 
 ### Store your app in a Git repository
-  * create a `.gitignore` file
+  * create a file called `.gitignore` (dot intended)
   * fill it with the following two lines:
+  
   ```
   venv
   *.pyc
-  ````
-  which tell the git not to upload your virtual environment to heroku as we don't need it as well as any compiled python code.
+  ```
+  which tells the git not to upload your virtual environment to heroku as we don't need it as well as any compiled python code.
   * run `git init` to initialize an empty repository
   * run `git add .` to add all files (apart from the ones inside the `.gitignore`)
   * run `git commit -m "init"` to commit the additions/changes you made. This should print a list of all the files added to the repository.
